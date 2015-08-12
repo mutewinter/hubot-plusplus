@@ -98,8 +98,10 @@ class ScoreKeeper
     last = @storage.last[room]
     if typeof last == 'string'
       [last, '']
-    else
+    else if last
       [last.user, last.reason]
+    else
+      []
 
   isSpam: (user, from) ->
     @storage.log[from] ||= {}
