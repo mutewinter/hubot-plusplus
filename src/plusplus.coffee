@@ -49,7 +49,7 @@ module.exports = (robot) ->
 
     # do some sanitizing
     reason = reason?.trim().toLowerCase()
-    name = (name.replace /(^\s*@)|([,:\s]*$)/g, "").trim().toLowerCase() if name
+    name = (name.replace /(^\s*@)|([,\s]*$)/g, "").trim().toLowerCase() if name
 
     # check whether a name was specified. use MRU if not
     unless name? && name != ''
@@ -74,7 +74,7 @@ module.exports = (robot) ->
                     "#{name} has #{score} point"
                   else
                     "#{name} has #{score} points"
-                  
+
 
       msg.send message
 
